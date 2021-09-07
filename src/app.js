@@ -3,6 +3,7 @@ const express = require('express');
 const hbs = require('hbs');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 const publicDirectoryPath = path.join(__dirname,'../public');
 const viewsPath = path.join(__dirname, '../templates/views');
@@ -33,6 +34,6 @@ app.get('/weather',(req,res) => {
     res.send("Your Weather");
 })
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+app.listen(port, () => {
+    console.log('Server is running on port'+ port);
 })
